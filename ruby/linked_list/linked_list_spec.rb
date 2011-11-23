@@ -39,4 +39,46 @@ describe LinkedList do
       @list.tail.element.should == 'example'
     end
   end
+
+  context 'removing elements' do
+    before do
+      @list.add('a')
+      @list.add('b')
+      @list.add('c')
+      @list.add('d')
+    end
+
+    it 'removes the tail if no argument is passed to remove' do
+      @list.remove
+
+      @list.tail.element.should == 'c'
+      @list.tail.next.should be_nil
+    end
+
+    it 'removes an element in the middle of the list' do
+      @list.remove('b')
+
+      @list.head.next.element.should == 'c'
+    end
+
+    it 'removes the tail multiple times' do
+      @list.remove
+      @list.remove
+
+      @list.tail.element.should == 'b'
+    end
+
+    it 'removes multiple elements from the middle of the list' do
+      @list.remove('b')
+      @list.remove('c')
+
+      @list.head.next.should == 'd'
+    end
+
+    it 'removes the head' do
+      @list.remove(@list.head)
+
+      @list.head.element.should == 'b'
+    end
+  end
 end
