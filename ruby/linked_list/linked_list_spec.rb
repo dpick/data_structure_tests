@@ -98,4 +98,25 @@ describe LinkedList do
       @list.exists?('f').should be_false
     end
   end
+
+  context 'finding the index of an element' do
+    before do
+      @list.add('a')
+      @list.add('b')
+      @list.add('c')
+      @list.add('d')
+    end   
+
+    it 'returns 0 for the index of the head element' do
+      @list.index_of(@list.head.element).should == 0
+    end
+
+    it 'returns the index of an element if it is in the list' do
+      @list.index_of('c').should == 2
+    end
+    
+    it 'returns nil for the index if the element is not in the list' do
+      @list.index_of('f').should be_nil
+    end
+  end
 end
