@@ -81,4 +81,21 @@ describe LinkedList do
       @list.head.element.should == 'b'
     end
   end
+
+  context 'checking if an element exists' do
+    before do
+      @list.add('a')
+      @list.add('b')
+      @list.add('c')
+      @list.add('d')
+    end
+
+    it 'returns true if the element is in the list' do
+      @list.exists?('b').should be_true
+    end
+
+    it 'returns false if the element is not in the list' do
+      @list.exists?('f').should be_false
+    end
+  end
 end
