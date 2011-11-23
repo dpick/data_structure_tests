@@ -38,6 +38,14 @@ describe LinkedList do
       @list.head.next.value.should == 'bar'
       @list.tail.value.should == 'example'
     end
+
+    it 'keeps track of the size of the list' do
+      @list.add('foo')  
+      @list.add('bar')  
+      @list.add('example')       
+
+      @list.size.should == 3
+    end
   end
 
   context 'removing values' do
@@ -53,6 +61,8 @@ describe LinkedList do
 
       @list.tail.value.should == 'c'
       @list.tail.next.should be_nil
+      
+      @list.size.should == 3
     end
 
     it 'removes an value in the middle of the list' do
@@ -73,6 +83,8 @@ describe LinkedList do
       @list.remove('c')
 
       @list.head.next.should == 'd'
+
+      @list.size.should == 2
     end
 
     it 'removes the head' do
