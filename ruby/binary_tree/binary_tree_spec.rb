@@ -57,21 +57,52 @@ describe BinaryTree do
   end
 
   context 'traversals' do
-    context 'preorder' do
+    before do
+      @tree.add(5)
+      @tree.add(3)
+      @tree.add(7)
+      
+      @tree.add(1)
+      @tree.add(2)
+      @tree.add(4)
+
+      @tree.add(9)
+      @tree.add(8)
     end
 
-    context 'inorder' do
+    it 'knows the preorder traversal of the tree' do
+      @tree.preorder.should == '53124798'
     end
 
-    context 'postorder' do
+    it 'knows the inorder traversal of the tree' do
+      @tree.inorder.should == '12345789'
+    end
+
+    it 'knows the postorder traversal of the tree' do
+      @tree.postorder.should == '21438975'
     end
   end
 
   context '#height' do
+    it 'knows the height with one node in the tree' do
+      @tree.add(5)
 
-  end
+      @tree.height.should == 1
+    end
 
-  context 'depth of an element' do
+    it 'knows the height of the tree with several nodes' do
+      @tree.add(5)
+      @tree.add(3)
+      @tree.add(7)
+      
+      @tree.add(1)
+      @tree.add(2)
+      @tree.add(4)
 
+      @tree.add(9)
+      @tree.add(8)
+
+      @tree.height.should == 4
+    end
   end
 end
