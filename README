@@ -1,7 +1,3 @@
 Unit Tests for Data Structures:
 
-I really enjoyed going through the ruby koans but they seemed to fall a little short.
-Why can't we continue the same idea with more programming concepts? Well we can :).
-So here's my take on the next step, a set of unit tests for data structures. The goal
-is to have a bunch of different languages and data structures. That way anyone interested
-can clone the repo and learn something.
+I really enjoyed going through the ruby koans but they seemed to fall a little short. Why can't we continue the same idea with more programming concepts? Well we can :). So here's my take on the next step, a set of unit tests for data structures. The goal is to have a bunch of different languages and data structures. That way anyone interested can clone the repo and learn something.
